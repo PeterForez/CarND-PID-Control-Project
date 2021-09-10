@@ -1,3 +1,15 @@
+- [CarND-Controls-PID](#carnd-controls-pid)
+  - [Dependencies](#dependencies)
+  - [Basic Build Instructions](#basic-build-instructions)
+  - [Editor Settings](#editor-settings)
+  - [Code Style](#code-style)
+  - [Project Instructions and Rubric](#project-instructions-and-rubric)
+  - [Hints!](#hints)
+  - [Call for IDE Profiles Pull Requests](#call-for-ide-profiles-pull-requests)
+  - [How to write a README](#how-to-write-a-readme)
+- [Overview](#overview)
+- [Tuning](#tuning)
+- [Reference](#reference)
 # CarND-Controls-PID
 Self-Driving Car Engineer Nanodegree Program
 
@@ -95,4 +107,22 @@ still be compilable with cmake and make./
 
 ## How to write a README
 A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
+
+
+# Overview
+PID is an acronym for Proportional, Intergral and Derivative. PID is a device that is used to control a process. The PID is a series of numbers that is used as adjustment in order to achieve your objective. 
+
+# Tuning 
+The twiddle algorithm is usually used to further optimize the values of the parameters after you've set the initial values. If you try using it with the initial gain of zero for each, you'll almost always drive out the lane. As such, use the twiddle algorithm to only fine tune the parameters after you've figured out a good enough set of initial values. ([Link](https://knowledge.udacity.com/questions/105257))
+
+
+
+
+
+
+
+
+# Reference
+1. https://www.youtube.com/watch?v=1ImhKwpSmuc
+2. https://knowledge.udacity.com/questions/105257
 
