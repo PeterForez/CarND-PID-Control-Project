@@ -59,17 +59,14 @@ int main()
   double Ki; 
   double Kd; 
   /* Initial values from the Lesson 12.11 */
-  Kp = 0.2;
+  Kp = 0.1;
   Ki = 0.004;
   Kd = 3.0;
   
-  //Kp = 0.518748;
-  //Ki = 0.00888861;
-  //Kd = 6.87406;
-  
-  
-
-    
+  //Kp = 0.533399;
+  //Ki = 0.00864839;
+  //Kd = 7.78123;
+      
   pid.Init(Kp, Ki, Kd);
    
 
@@ -128,7 +125,7 @@ int main()
 
           json msgJson;
           msgJson["steering_angle"] = steer_value;
-          msgJson["throttle"] = 0.3;
+          msgJson["throttle"] = 0.5;
           auto msg = "42[\"steer\"," + msgJson.dump() + "]";
           std::cout << msg << std::endl;
           ws.send(msg.data(), msg.length(), uWS::OpCode::TEXT);
