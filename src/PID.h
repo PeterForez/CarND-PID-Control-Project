@@ -32,7 +32,7 @@ class PID {
   double TotalError();
   
   
-  void Twiddle();
+  void Twiddle(double cte);
 
  private:
   /**
