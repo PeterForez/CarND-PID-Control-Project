@@ -54,10 +54,19 @@ int main()
   PID pid;
   /**
    * TODO: Initialize the pid variable.
-   */
-  double Kp = 0.2;
-  double Ki = 0.004; 
-  double Kd = 3.0; 
+   */  
+  double Kp;
+  double Ki; 
+  double Kd; 
+  /* Initial values from the Lesson 12.11 */
+  Kp = 0.2;
+  Ki = 0.004;
+  Kd = 3.0;
+  
+  Kp = 0.21;
+  Ki = 0.004;
+  Kd = 3.0;
+  
     
   pid.Init(Kp, Ki, Kd);
    
@@ -94,6 +103,20 @@ int main()
           
           pid.UpdateError(cte);
           steer_value = pid.TotalError();
+          
+          // Adjusting the steering value to be within [-1, 1]
+          if(steer_value > 1)
+          {
+            steer_value = 1;
+          }
+          else if(steer_value < -1)
+          {
+            steer_value = -1;
+          }
+          else
+          {
+            /* Do Nothing */
+          }
 
           // DEBUG
           std::cout << "CTE: " << cte << " Steering Value: " << steer_value 
