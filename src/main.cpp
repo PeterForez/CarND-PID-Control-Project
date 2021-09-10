@@ -63,25 +63,11 @@ int main()
   Ki = 0.004;
   Kd = 3.0;
   
-  Kp = 0.195628;
-  Ki = 0.00427699;
-  Kd = 3.41152;
+  Kp = 0.518748;
+  Ki = 0.00888861;
+  Kd = 6.87406;
   
-  Kp = 0.15;
-  Ki = 0.00427699;
-  Kd = 3.5;
   
-  Kp = 0.115;
-  Ki = 0.0042;
-  Kd = 3.8;
-  
-  Kp = 0.13; // Working good with 0.3 throttle
-  Ki = 0.004;// Working good with 0.3 throttle
-  Kd = 3;    // Working good with 0.3 throttle
-  
-  Kp = 0.2;
-  Ki = 0.004;
-  Kd = 3.0;
 
     
   pid.Init(Kp, Ki, Kd);
@@ -123,12 +109,12 @@ int main()
           // Adjusting the steering value to be within [-1, 1]
           if(steer_value > 1)
           {
-            std::cout << "steer_value > 1: "  << steer_value << std::endl << std::endl;
+            //std::cout << "steer_value > 1: "  << steer_value << std::endl << std::endl;
             steer_value = 1;
           }
           else if(steer_value < -1)
           {
-            std::cout << "steer_value < -1: " << steer_value << std::endl << std::endl;
+            //std::cout << "steer_value < -1: " << steer_value << std::endl << std::endl;
             steer_value = -1;
           }
           else
