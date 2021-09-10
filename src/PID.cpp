@@ -48,7 +48,7 @@ double PID::TotalError()
    */
   double steer_value = -Kp * p_error - Kd * d_error - Ki * i_error;
     
-  std::cout << " Steering Value from TotalError: " << steer_value << std::endl;
+  //std::cout << " Steering Value from TotalError: " << steer_value << std::endl;
   return steer_value;  // TODO: Add your total error calc here!
 }
 
@@ -57,6 +57,7 @@ double PID::TotalError()
 void PID::Twiddle() 
 {
   double p[]  = {Kp, Ki, Kd};
+  static int iteration = 0;
   //static double dp[] = {1, 1, 1};
   //static double dp[] = {0.5, 0.5, 0.5};
   static double dp[] = {0.01, 0.0001, 0.1}; //Delta is 10 percent from the initial value
@@ -64,6 +65,16 @@ void PID::Twiddle()
   static int state = TWIDDLE_STATE_INIT; //
   static double best_err;
   double err;
+  
+  
+  //iteration += 1;
+  //if (iteration == 100)
+  //{
+  //  iteration = 0;
+  //  dp[0] = 0.01;
+  //  dp[1] = 0.0001;
+  //  dp[2] = 0.1;
+  //}
   
   std::cout << std::endl;
   std::cout << "best_err:  " << best_err <<std::endl;
