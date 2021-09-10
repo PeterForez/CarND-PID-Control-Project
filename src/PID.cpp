@@ -24,9 +24,9 @@ void PID::Init(double Kp_, double Ki_, double Kd_)
   Ki = Ki_;
   Kd = Kd_;
   
-  p_error = 0.0;
-  i_error = 0.0;
-  d_error = 0.0;
+  p_error = 0.0; // Proportional Error
+  i_error = 0.0; // Intergral Error
+  d_error = 0.0; // Differential Error
 }
 
 void PID::UpdateError(double cte) 
@@ -35,10 +35,10 @@ void PID::UpdateError(double cte)
    * TODO: Update PID errors based on cte.
    */
   
-  d_error  = cte - p_error;
-  p_error  = cte;
-  i_error += cte;
-  Twiddle();
+  d_error  = cte - p_error;   // Differential Error
+  p_error  = cte;             // Proportional Error
+  i_error += cte;             // Intergral Error
+  //Twiddle();
 }
 
 double PID::TotalError() 
@@ -49,6 +49,13 @@ double PID::TotalError()
   double steer_value = -Kp * p_error - Kd * d_error - Ki * i_error;
     
   //std::cout << " Steering Value from TotalError: " << steer_value << std::endl;
+  
+  std::cout << std::endl;
+  std::cout << "Kp:  " << Kp << std::endl;
+  std::cout << "Ki:  " << Ki << std::endl;
+  std::cout << "Kd:  " << Kd << std::endl;
+  std::cout << std::endl;
+  
   return steer_value;  // TODO: Add your total error calc here!
 }
 
