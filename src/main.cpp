@@ -71,9 +71,13 @@ int main()
   Ki = 0.00427699;
   Kd = 3.5;
   
-  Kp = 0.13;
+  Kp = 0.115;
   Ki = 0.0042;
-  Kd = 3.7;
+  Kd = 3.8;
+  
+  Kp = 0.13; // Working good with 0.3 throttle
+  Ki = 0;    // Working good with 0.3 throttle
+  Kd = 3;    // Working good with 0.3 throttle
 
     
   pid.Init(Kp, Ki, Kd);
