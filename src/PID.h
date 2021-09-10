@@ -30,6 +30,9 @@ class PID {
    * @output The total PID error
    */
   double TotalError();
+  
+  
+  void Twiddle();
 
  private:
   /**
