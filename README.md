@@ -161,16 +161,9 @@ The main issue that I faced was that the simuator was not working correclty on w
 
 I stared the initial value of the parameter by 
 ``` Cpp
-  Kp = 0.2;
+  Kp = 0.1;
   Ki = 0.004;
   Kd = 3.0;
-```
-
-and after tuning with Twiddle, The final parameters are
-```cpp
-  Kp = 0.518748;
-  Ki = 0.00888861;
-  Kd = 6.87406;
 ```
 
 ## Maximum Steering angel
